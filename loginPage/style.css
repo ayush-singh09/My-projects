@@ -1,0 +1,187 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    font-family: gilroy;
+    color: white;
+    background-image: url(background3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.nav-bar{
+    display: flex;
+    height: 70px;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: transparent;
+    backdrop-filter: blur(10px);
+}
+.nav-bar .nav-links {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+.nav-bar .nav-links button{
+    height: fit-content;
+    padding: 6px 20px;
+    font-size: 18px;
+    background-color: transparent;
+    border-radius: 6px;
+    border: 2px solid white;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    transition: .2s;
+}
+.nav-bar .nav-links button:hover{
+    background-color: white;
+    color: black;
+    outline: none;
+    cursor: pointer;
+}
+.nav-bar .nav-links a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+.main{
+    display: flex;
+    height: calc(100% - 70px);
+    justify-content: center;
+    align-items: center;
+}
+.details{
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px black;
+    height: fit-content;
+    width: 350px;
+    padding: 10px 20px;
+    overflow: hidden;
+    transform: scale(0);
+    opacity: 0;
+    transition: 1s ease;
+}
+.details h2{
+    text-align: center;
+}
+.details input{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    width: 100%;
+    font-size: 15px;
+    color: white;
+    padding-right: 10px;
+}
+.details-input{
+    display: flex;
+    border-bottom: 2px solid white;
+    justify-content: space-between;
+    padding: 5px 5px;
+    height: 35px;
+    align-items: center;
+}
+.register-option{
+    display: flex;
+    justify-content: space-between;
+}
+.register-option p{
+    font-size: 15px;
+}
+.register-option a{
+    text-decoration: none;
+}
+.register-option a:hover{
+    text-decoration: underline;
+}
+.login-btn{
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(227, 79, 79);
+    font-size: 17px;
+    padding: 10px ;
+    cursor: pointer;
+    transition: .2s;
+}
+.login-btn:hover{
+    background-color: rgb(235, 22, 22);
+}
+.reg-btn{
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(227, 79, 79);
+    font-size: 17px;
+    padding: 10px ;
+    cursor: pointer;
+    transition: .2s;
+}
+.reg-btn:hover{
+    background-color: rgb(235, 22, 22);
+}
+.remember-forgot input{
+    width: 20px;
+    accent-color: black;
+}
+.closeIcon{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: black;
+    padding: 3px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 30%;
+    cursor: pointer;
+}
+.intro{
+    background-color: transparent;
+    backdrop-filter: blur(8px);
+    padding: 20px;
+    border: 2px solid white;
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+}
+.active{
+    display: flex;
+    transform: scale(1);
+    opacity: 1;
+}
+.intro span{
+    color:aquamarine ;
+}
+
+@media (max-width:600px) {
+    .nav-bar .nav-links a{
+        display: none;
+    }
+    .intro{
+        margin: 0 10px;
+    }
+    .intro h1{
+        font-size: 8vw;
+    }
+    .details{
+        margin: 0 10px;
+    }
+    .register-option p{
+        font-size: 14px;
+    }
+    .register-option{
+        font-size: 12px;
+    }
+}
