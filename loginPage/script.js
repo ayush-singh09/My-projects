@@ -14,6 +14,7 @@ var flag = 0
 login.addEventListener('click',function(){
     if(flag==0)
     {
+        clear();
         loginForm.classList.add('active')
         flag = 1
     }    
@@ -22,18 +23,21 @@ login.addEventListener('click',function(){
 
 closeIcon1.addEventListener('click',function(){
     flag = 0
+    clear();
     loginForm.classList.remove('active')
     intro.classList.add('active')
 })
 
 closeIcon2.addEventListener('click',function(){
     flag = 0
+    clear();
     regForm.classList.remove('active')
     intro.classList.add('active')
 })
 
 regOpt.addEventListener('click',function(){
     flag = 1
+    clear();
     loginForm.classList.remove('active')
     regForm.classList.add('active')
     intro.classList.remove('active')
@@ -41,6 +45,7 @@ regOpt.addEventListener('click',function(){
 
 logOpt.addEventListener('click',function(){
     flag = 1
+    clear()
     loginForm.classList.add('active')
     regForm.classList.remove('active')
     intro.classList.remove('active')
@@ -67,7 +72,18 @@ regBtn.addEventListener('click',function(){
         }
     }
     else{
-        alert("Please Fill all Details!")
+        if(username === '')
+        {
+            document.querySelector('.reg-user').style.color='red'
+        }
+        if(email === '')
+        {
+            document.querySelector('.reg-email').style.color='red'
+        }
+        if(password === '')
+        {
+            document.querySelector('.reg-pass').style.color='red'
+        }
     }
 })
 
@@ -82,13 +98,22 @@ logBtn.addEventListener('click',function(){
         if(storedPassword === password)
         {
             alert("Login Successful!")
+            clear();
         }
         else{
-            alert("Incorrect Password! Try Again.")
+            document.querySelector('.log-user').style.color = "red"
+            document.querySelector('.log-pass').style.color = "red"
         }
     }
     else {
-        alert("Please fill in the details!")
+        if(username === '')
+        {
+            document.querySelector('.log-user').style.color = "red"
+        }
+        if(password === '')
+        {
+            document.querySelector('.log-pass').style.color = "red"
+        }
     }
 })
 
@@ -99,4 +124,9 @@ function clear()
     document.querySelector('.reg-pass').value = ''
     document.querySelector('.log-user').value = ''
     document.querySelector('.log-pass').value = ''
+    document.querySelector('.log-user').style.color = "white"
+    document.querySelector('.log-pass').style.color = "white"
+    document.querySelector('.reg-user').style.color='white'
+    document.querySelector('.reg-email').style.color='white'
+    document.querySelector('.reg-pass').style.color='white'
 }
