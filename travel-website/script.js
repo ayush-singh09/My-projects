@@ -3,6 +3,10 @@ const scroll = new LocomotiveScroll({
     smooth: true
 });
 
+document.querySelector(".hero").style.height = window.innerHeight + 'px'
+document.querySelector(".hero2").style.height = window.innerHeight + 'px'
+document.querySelector(".hero3").style.height = window.innerHeight + 'px'
+
 gsap.from(".effect",{
     onStart: function () {
         $('.effect').textillate({ in: { effect: 'fadeInUp', /*duration:600,*/ delay:2 } });
